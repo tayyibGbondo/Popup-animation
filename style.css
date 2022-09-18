@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(35deg, lightblue , rgba(218, 165, 32, 0.624));
+}
+
+.popover{
+  width: 65%;
+  background-color: goldenrod;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+  animation-name: pop;
+  animation-duration: 1s;
+  animation-delay: 0.3;
+  animation-timing-function: ease;
+}
+
+@keyframes pop {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+  
+}
+
+.popover.motion{
+  animation-name: mo;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+@keyframes mo {
+  from{
+    left: 0;
+    opacity: 0.5;
+  }
+  to{
+    left: 200px;
+    opacity: 0;
+  }
+}
+
+.trigger{
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  position: absolute;
+  top: 60%;
+  animation-name: round;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes round {
+  from{
+    border: 2px solid black;
+    transform: scale(1);
+  }
+  to{
+    border: 3px solid red;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .popover{
+    width: 80%;
+    background-color: goldenrod;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    position: static;
+    top: 0;
+    left: 0;
+  }
+
+  .trigger{
+    position: absolute;
+    top: 75%;
+  }
+}
+
